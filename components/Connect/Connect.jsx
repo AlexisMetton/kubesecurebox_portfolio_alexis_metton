@@ -2,29 +2,41 @@ import React, { useState } from 'react';
 import { connectData } from './ConnectData';
 
 const Connect = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-        subject: '',
-    });
-
     const [submitStatus, setSubmitStatus] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
+        setIsSubmitting(true);
+        setSubmitStatus(null);
 
-        if (response.status === 200) {
-            setSubmitStatus('success');
-        } else {
+        const form = e.target;
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                form.reset();
+            } else {
+                const responseData = await response.json();
+                if (responseData.errors) {
+                    console.error('Erreurs:', responseData.errors);
+                }
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Erreur:', error);
             setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -65,26 +77,64 @@ const Connect = () => {
             <div className="mt-4 mt-lg-5">
                 {/* Contact Form */}
                 <div className="contact-form">
-                    <form method="post" id="contactform" action="https://formspree.io/f/mgvyjlag">
+                    <form 
+                        method="POST" 
+                        id="contactform" 
+                        action="https://formspree.io/f/mgvyjlag"
+                        onSubmit={handleSubmit}
+                    >
                         <div className="row gx-3 gy-0">
                             <div className="col-12 col-md-6">
-                                <input type="text" id="name" name="name" placeholder="Nom" required />
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    placeholder="Nom" 
+                                    required 
+                                    disabled={isSubmitting}
+                                />
                             </div>
                             <div className="col-12 col-md-6">
-                                <input type="email" id="email" name="email" placeholder="Email" required />
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="Email" 
+                                    required 
+                                    disabled={isSubmitting}
+                                />
                             </div>
                         </div>
-                        <input type="text" id="subject" name="subject" placeholder="Sujet" required />
-                        <textarea name="message" id="message" placeholder="Message"></textarea>
-                        <button className="button button-md button-dark" type="submit">Envoyer</button>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="Sujet" 
+                            required 
+                            disabled={isSubmitting}
+                        />
+                        <textarea 
+                            name="message" 
+                            id="message" 
+                            placeholder="Message" 
+                            required
+                            disabled={isSubmitting}
+                        ></textarea>
+                        <button 
+                            className="button button-md button-dark" 
+                            type="submit"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                        </button>
                     </form>
                     {/* Submit result */}
                     <div className="submit-result">
                         {submitStatus === 'success' && (
-                            <span id="success">Merci ! Votre message a été envoyé.</span>
+                            <span id="success">Merci ! Votre message a été envoyé avec succès.</span>
                         )}
                         {submitStatus === 'error' && (
-                            <span id="error">Une erreur est survenue. Veuillez réessayer.</span>
+                            <span id="error">Oups ! Une erreur est survenue lors de l&apos;envoi. Veuillez réessayer.</span>
                         )}
                     </div>
                 </div>

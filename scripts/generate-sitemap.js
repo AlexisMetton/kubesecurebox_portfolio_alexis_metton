@@ -9,6 +9,10 @@ const OUTPUT_FILE = path.join(__dirname, '../public/sitemap.xml')
 const portfolioData = {
     projects: [
         {
+            slug: 'wifi-pineapple-lab',
+            date: 'Sep 01, 2025'
+        },
+        {
             slug: 'cryptoshield',
             date: 'Avr 01, 2025'
         },

@@ -23,4 +23,9 @@ Allow: /blog/
 Disallow: /.git/
 Disallow: /scripts/
 Disallow: /components/
-Disallow: /lib/ 
+Disallow: /lib/
+
+# Instructions spécifiques pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1 

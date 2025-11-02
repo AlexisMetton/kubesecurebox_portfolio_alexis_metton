@@ -60,7 +60,7 @@ const Navigation = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [handleScroll]);
 
     return (
         <div className="nav-wrapper">

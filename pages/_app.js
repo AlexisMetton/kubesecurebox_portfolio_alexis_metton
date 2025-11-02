@@ -9,9 +9,13 @@ import '@/styles/all.min.css'
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(true);
+  const [isClient, setIsClient] = React.useState(false);
 
   React.useEffect(() => {
-    // Simuler un temps de chargement court puis désactiver le loading
+    // Marquer que nous sommes côté client
+    setIsClient(true);
+    
+    // Écran de chargement côté client uniquement
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1000); // 1 seconde de loading
@@ -21,7 +25,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <SecurityProvider>
-      {loading ? (
+      {loading && isClient ? (
         <LoadingScreen />
       ) : (
         <React.Fragment>

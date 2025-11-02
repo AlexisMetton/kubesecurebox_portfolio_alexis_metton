@@ -47,6 +47,11 @@ import CryptoShieldImg4 from '@/public/images/portfolio/cryptoshield_4.jpg';
 import CryptoShieldImg5 from '@/public/images/portfolio/cryptoshield_5.jpg';
 import CryptoShieldImg6 from '@/public/images/portfolio/cryptoshield_6.jpg';
 import CryptoShieldImg7 from '@/public/images/portfolio/cryptoshield_7.jpg';
+import WifiPineappleImg from '@/public/images/portfolio/wifi_pineapple.jpg';
+import WifiPineappleImg1 from '@/public/images/portfolio/wifi_pineapple_1.jpg';
+import WifiPineappleImg2 from '@/public/images/portfolio/wifi_pineapple_2.jpg';
+import WifiPineappleImg3 from '@/public/images/portfolio/wifi_pineapple_3.jpg';
+import WifiPineappleImg4 from '@/public/images/portfolio/wifi_pineapple_4.jpg';
 
 const moisFrancais = {
   'Jan': 'Jan',
@@ -65,6 +70,136 @@ const moisFrancais = {
 
 // --- DÉBUT DU TABLEAU PROJECTS ---
 const projects = [
+    {
+        projectTitle: 'WiFi Pineapple - Laboratoire d\'Audit WiFi',
+        slug: 'wifi-pineapple-lab',
+        seoTitle: 'WiFi Pineapple - Laboratoire Audit WiFi Sécurité | Alexis Metton',
+        seoDescription: 'Laboratoire d\'audit WiFi complet avec WiFi Pineapple. Tests Evil Twin, capture de handshakes, reconnaissance réseau et formation cybersécurité.',
+        description: `
+            <div class="row g-4 mt-2">
+                <div class="col-12">
+                    <h2 class="fw-medium" style="color: rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); padding-bottom: 10px;">Plateforme d'Audit et de Formation en Sécurité WiFi</h2>
+                    <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">WiFi Pineapple Lab</strong> est un laboratoire complet d'audit de sécurité WiFi développé à des fins de formation et de recherche en cybersécurité. Ce projet utilise le WiFi Pineapple Mark VII édition tactique de Hak5 pour explorer les vulnérabilités des réseaux sans fil et développer des compétences en tests de pénétration WiFi dans un environnement contrôlé et éthique.</p>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">I. Contexte et Objectifs</h3>
+                    <p style="color: rgb(0, 0, 0);">Développé dans un cadre de formation personnelle en cybersécurité, ce projet répond au besoin de comprendre les vulnérabilités des réseaux WiFi et les techniques d'audit modernes. L'objectif était de maîtriser les outils professionnels d'audit WiFi, de comprendre les protocoles de sécurité sans fil, et de développer des compétences pratiques en tests de pénétration dans un environnement légal et contrôlé.</p>
+                    <p style="color: rgb(0, 0, 0);">Le projet vise à créer un laboratoire d'apprentissage permettant d'explorer les techniques Evil Twin, la capture de handshakes WPA/WPA2, la reconnaissance réseau passive et les méthodes de contournement des sécurisations WiFi, tout en respectant un cadre éthique strict.</p>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">II. Architecture Technique</h3>
+                    <h4 class="titre-cinq fw-medium mt-4" style="color: rgb(0, 0, 0);">Matériel et Plateforme</h4>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Dispositif :</strong> WiFi Pineapple Mark VII édition tactique (Hak5) avec antennes haute gain</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Interface :</strong> Web UI avancée avec modules pré-installés</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Connectivité :</strong> USB-C, WiFi dual-band</li>
+                    </ul>
+                    <h4 class="titre-cinq fw-medium mt-4" style="color: rgb(0, 0, 0);">Modules et Fonctionnalités</h4>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">PineAP :</strong> Point d'accès intelligent avec impersonation automatique</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Evil WPA :</strong> Création de faux réseaux sécurisés pour capture de handshakes</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Open AP :</strong> Points d'accès ouverts comme honeypots</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Reconnaissance :</strong> Modules WiGLE, MAC Info, HTTPeek pour intelligence gathering</li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">III. Techniques d'Audit Développées</h3>
+                    <h4 class="titre-cinq fw-medium mt-4" style="color: rgb(0, 0, 0);">Attaques Evil Twin</h4>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);">Création de faux points d'accès imitant des réseaux légitimes</li>
+                        <li style="color: rgb(0, 0, 0);">Capture automatique des tentatives de connexion</li>
+                        <li style="color: rgb(0, 0, 0);">Interception du trafic des clients connectés</li>
+                        <li style="color: rgb(0, 0, 0);">Tests de sensibilisation des utilisateurs aux réseaux malveillants</li>
+                    </ul>
+                    <h4 class="titre-cinq fw-medium mt-4" style="color: rgb(0, 0, 0);">Capture de Handshakes</h4>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);">Capture passive de handshakes WPA/WPA2 authentiques</li>
+                        <li style="color: rgb(0, 0, 0);">Génération active de handshakes via Evil WPA</li>
+                        <li style="color: rgb(0, 0, 0);">Export au format .hc22000 pour analyse avec Hashcat</li>
+                        <li style="color: rgb(0, 0, 0);">Tests de robustesse des mots de passe WiFi</li>
+                    </ul>
+                    <h4 class="titre-cinq fw-medium mt-4" style="color: rgb(0, 0, 0);">Reconnaissance et Intelligence</h4>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);">Cartographie géographique des réseaux avec WiGLE</li>
+                        <li style="color: rgb(0, 0, 0);">Identification des constructeurs via analyse MAC</li>
+                        <li style="color: rgb(0, 0, 0);">Interception HTTP pour analyse de trafic non chiffré</li>
+                        <li style="color: rgb(0, 0, 0);">Surveillance passive des communications WiFi</li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">IV. Intégrations et Modules Avancés</h3>
+                    <h4 class="titre-cinq fw-medium mt-4" style="color: rgb(0, 0, 0);">Modules de Reconnaissance</h4>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">WiGLE :</strong> Géolocalisation des réseaux via base de données mondiale</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">MAC Info :</strong> Identification des constructeurs d'équipements</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">HTTPeek :</strong> Capture et analyse du trafic HTTP</li>
+                    </ul>
+                    <h4 class="titre-cinq fw-medium mt-4" style="color: rgb(0, 0, 0);">Modules d'Attaque</h4>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">DNSspoof :</strong> Redirection DNS pour attaques man-in-the-middle</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">MDK4 :</strong> Tests de déni de service WiFi</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Proxy Helper :</strong> Intégration avec OWASP ZAP</li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">V. Technologies et Compétences Développées</h3>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Sécurité WiFi :</strong> Protocoles WPA/WPA2/WPA3, cryptographie WiFi, vulnérabilités</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Tests de Pénétration :</strong> Méthodologies Red Team, Evil Twin attacks</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Outils Spécialisés :</strong> WiFi Pineapple, Hashcat, Wireshark, Aircrack-ng</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Analyse de Trafic :</strong> Interception réseau, analyse protocoles, détection de patterns</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Éthique :</strong> Cadre légal, tests autorisés, respect de la vie privée</li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VI. Défis et Solutions</h3>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Limitations légales :</strong> Tests uniquement sur réseaux personnels et environnements autorisés</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Configuration WiGLE :</strong> Gestion des tokens API et limitations de quotas</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Optimisation antennes :</strong> Positionnement et configuration pour portée maximale</li>
+                        <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Détection :</strong> Techniques de discrétion pour éviter la détection par les systèmes de sécurité</li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VII. Impact et Résultats</h3>
+                    <ul class="list-circle">
+                        <li style="color: rgb(0, 0, 0);">Maîtrise des techniques d'audit WiFi modernes</li>
+                        <li style="color: rgb(0, 0, 0);">Compréhension des vulnérabilités des réseaux sans fil</li>
+                        <li style="color: rgb(0, 0, 0);">Développement de compétences pratiques en tests de pénétration</li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VIII. Aspects Éthiques et Légaux</h3>
+                    <p style="color: rgb(0, 0, 0);">Ce projet a été développé dans un strict respect du cadre légal et éthique. Tous les tests ont été effectués uniquement sur des réseaux personnels ou dans des environnements de formation autorisés. L'objectif reste exclusivement éducatif et de formation en cybersécurité, contribuant à l'amélioration de la posture de sécurité globale plutôt qu'à des activités malveillantes.</p>
+                    <div style="background: rgb(242, 245, 248); border: 1px solid rgb(0, 0, 0); padding: 20px; border-radius: 6px; margin-top: 30px;">
+                        <p style="color: rgb(0, 0, 0); font-weight: 500; margin: 0; text-align: center;">Le WiFi Pineapple Lab représente une approche moderne de la formation en sécurité WiFi, démontrant l'importance de la compréhension des vulnérabilités pour mieux s'en protéger. Cette plateforme illustre l'utilisation éthique des outils de test de pénétration dans un cadre de formation et de recherche en cybersécurité.</p>
+                    </div>
+                </div>
+            </div>
+        `,
+        keywords: 'wifi pineapple, audit wifi, evil twin, handshake, cybersécurité, pentest',
+        category: 'Cybersécurité',
+        services: 'Audit WiFi, Tests de Pénétration, Formation Sécurité',
+        client: 'Formation Personnelle',
+        duration: '2 semaines',
+        date: 'Sep 01, 2025',
+        postedBy: 'Alexis Metton',
+        imageSrc: WifiPineappleImg, // Vous devrez ajouter cette image
+        mainImage: WifiPineappleImg,
+        categories: [
+            { name: 'WiFi Audit' },
+            { name: 'Pentest' },
+            { name: 'Evil Twin' },
+            { name: 'Reconnaissance' }
+        ],
+        images: [
+            // Ajoutez vos images ici
+            { image: WifiPineappleImg1 },
+            { image: WifiPineappleImg2 },
+            { image: WifiPineappleImg3 },
+            { image: WifiPineappleImg4 },
+        ]
+    },
     {
         projectTitle: "CryptoShield - Anonymisation Bitcoin",
         slug: "cryptoshield",
@@ -171,7 +306,7 @@ const projects = [
         category: "Web3",
         services: "Développement Blockchain, Interface Web, Cryptographie Appliquée",
         client: "Projet Personnel",
-        duration: "En cours",
+        duration: "2 semaines",
         date: "Avr 01, 2025",
         postedBy: "Alexis Metton",
         imageSrc: CryptoShieldImg,
@@ -306,7 +441,7 @@ const projects = [
         category: "Web3",
         services: "Développement Blockchain, Sécurité Applicative, Architecture Full-Stack",
         client: "Projet Personnel",
-        duration: "En cours",
+        duration: "2 semaines",
         date: "Avr 01, 2025",
         postedBy: "Alexis Metton",
         imageSrc: VoteChainImg,
@@ -1189,13 +1324,23 @@ const projects = [
    ];
 // --- FIN DU TABLEAU PROJECTS ---
 
-// Trie les projets du plus récent au plus ancien
+// Trie les projets : d'abord ceux "En cours", puis par date décroissante
 projects.sort((a, b) => {
   function parseDate(str) {
     const [mois, jour, annee] = str.replace(',', '').split(' ');
     const moisEn = moisFrancais[mois] || mois;
     return new Date(`${moisEn} ${jour}, ${annee}`);
   }
+  
+  // Si un projet est "En cours" et l'autre non, le projet "En cours" vient en premier
+  if (a.duration === "En cours" && b.duration !== "En cours") {
+    return -1;
+  }
+  if (a.duration !== "En cours" && b.duration === "En cours") {
+    return 1;
+  }
+  
+  // Si les deux ont le même statut (tous les deux "En cours" ou tous les deux terminés), trier par date
   return parseDate(b.date) - parseDate(a.date);
 });
 

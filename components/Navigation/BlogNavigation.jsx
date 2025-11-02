@@ -23,8 +23,11 @@ const PortfolioNavigation = () => {
             }
         }
 
-        // Calculate headerHeight and update isFixed
-        const headerHeight = document.getElementById('header').clientHeight;
+        // Calculate headerHeight and update isFixed - avec vérification de l'existence
+        const headerElement = document.getElementById('header');
+        if (!headerElement) return; // Sortir si l'élément n'existe pas encore
+        
+        const headerHeight = headerElement.clientHeight;
         const windowWidth = window.innerWidth;
 
         if (windowWidth < 992) {
@@ -38,23 +41,38 @@ const PortfolioNavigation = () => {
 
     // Add a scroll event listener when the component mounts
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
-        // Get the initial headerHeight
-        const initialHeaderHeight = document.getElementById('header').clientHeight;
-
-        // Check and update isFixed initially
-        const windowWidth = window.innerWidth;
-        if (windowWidth < 992) {
-            if (window.scrollY >= initialHeaderHeight) {
-                setIsFixed(true);
+        // Vérifier que nous sommes côté client et que l'élément existe
+        if (typeof window === 'undefined') return;
+        
+        // Attendre que le DOM soit complètement chargé
+        const initNavigation = () => {
+            const headerElement = document.getElementById('header');
+            if (!headerElement) {
+                // Réessayer après un court délai si l'élément n'existe pas encore
+                setTimeout(initNavigation, 100);
+                return;
             }
-        }
+
+            window.addEventListener('scroll', handleScroll);
+
+            // Get the initial headerHeight
+            const initialHeaderHeight = headerElement.clientHeight;
+
+            // Check and update isFixed initially
+            const windowWidth = window.innerWidth;
+            if (windowWidth < 992) {
+                if (window.scrollY >= initialHeaderHeight) {
+                    setIsFixed(true);
+                }
+            }
+        };
+
+        initNavigation();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [handleScroll]);
 
     return (
         <div className="nav-wrapper">
