@@ -29,11 +29,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com /matomo/",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
               "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:",
               "img-src 'self' data: https: blob:",
-              "connect-src 'self' https://maps.googleapis.com https://formspree.io",
+              "connect-src 'self' https://maps.googleapis.com https://formspree.io /matomo/",
               "frame-src 'self'",
               "object-src 'none'",
               "base-uri 'self'",

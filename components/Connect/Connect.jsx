@@ -25,6 +25,11 @@ const Connect = () => {
             if (response.ok) {
                 setSubmitStatus('success');
                 form.reset();
+                
+                // Track form submission in Matomo
+                if (typeof window !== 'undefined' && window._paq) {
+                    window._paq.push(['trackEvent', 'Formulaire', 'Soumission', 'contact']);
+                }
             } else {
                 const responseData = await response.json();
                 if (responseData.errors) {
