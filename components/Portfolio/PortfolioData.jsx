@@ -178,7 +178,7 @@ const projects = [
             </div>
         `,
         keywords: 'wifi pineapple, audit wifi, evil twin, handshake, cybersécurité, pentest',
-        category: 'Cybersécurité',
+        category: 'DevSecOps',
         services: 'Audit WiFi, Tests de Pénétration, Formation Sécurité',
         client: 'Formation Personnelle',
         duration: '2 semaines',
@@ -469,99 +469,112 @@ const projects = [
         ]
     },
        {
-           projectTitle: 'KubeSecureBox - Laboratoire Cybersécurité',
+           projectTitle: 'KubeSecureBox – Cluster Raspberry Pi',
            slug: 'kubesecurebox',
-           seoTitle: 'KubeSecureBox - Lab Cybersécurité Kubernetes | Alexis Metton',
-           seoDescription: 'Laboratoire de cybersécurité complet sur Kubernetes avec Raspberry Pi. Stack Red/Blue Team, monitoring centralisé et workflow GitOps.',
+           seoTitle: 'KubeSecureBox - Cluster Raspberry Pi GitOps & Monitoring | Alexis Metton',
+           seoDescription: 'Cluster Kubernetes (K3s) sur Raspberry Pi. GitOps (ArgoCD), monitoring (Prometheus, Grafana, Loki), apps métier (pentesting, n8n). Accès sécurisé via Tailscale.',
            description: `
            <div class="row g-4 mt-2">
                <div class="col-12">
-                   <h2 class="fw-medium" style="color: rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); padding-bottom: 10px;">Environnement Cybersécurité Offensive & Défensive sur Kubernetes</h2>
-                   <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">KubeSecureBox</strong> est un laboratoire complet de cybersécurité basé sur un cluster Kubernetes (k3s) composé de deux Raspberry Pi (Pi 4 & Pi 5). Ce projet vise à expérimenter et démontrer des compétences avancées en DevSecOps, cybersécurité offensive et défensive, automatisation et infrastructure GitOps, dans un environnement bare-metal distribué et 100% maîtrisé.</p>
+                   <h2 class="fw-medium" style="color: rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); padding-bottom: 10px;">Cluster Raspberry Pi – GitOps, monitoring &amp; apps métier</h2>
+                   <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">KubeSecureBox</strong> est un cluster Kubernetes (K3s) sur Raspberry Pi. Chaque nœud est configuré avec Ansible (sécurité, réseau, kubernetes). GitOps (ArgoCD), monitoring (Prometheus, Grafana, Loki) et apps métier (pentesting, n8n). Accès distant via Tailscale. Document de référence aligné avec le repo GitOps et les composants déployés.</p>
                </div>
                <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">I. Objectifs Techniques</h3>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">I. Infrastructure matérielle</h3>
                    <ul class="list-circle">
-                       <li style="color: rgb(0, 0, 0);">Déployer un cluster Kubernetes sécurisé, résilient et auto-géré</li>
-                       <li style="color: rgb(0, 0, 0);">Orchestrer une stack offensive (Red Team) et défensive (Blue Team)</li>
-                       <li style="color: rgb(0, 0, 0);">Implémenter un workflow GitOps avec ArgoCD</li>
-                       <li style="color: rgb(0, 0, 0);">Monitoring centralisé avec Prometheus, Loki, Grafana</li>
-                       <li style="color: rgb(0, 0, 0);">Alertes automatisées (email, mobile, Discord) sur incidents critiques</li>
-                       <li style="color: rgb(0, 0, 0);">Automatiser des audits de sécurité internes et externes</li>
-                       <li style="color: rgb(0, 0, 0);">Accès distant chiffré et cloisonné via VPN (Tailscale)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Raspberry Pi 4 (8 Go RAM)</strong> – Nœud maître (Kubernetes Control Plane) + hébergement du disque 4 To</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Raspberry Pi 5 (8 Go RAM) x2</strong> – Nœuds workers (charge de travail, outils de scan)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Disque dur 4 To USB 3.0</strong> – Stockage des logs, rapports, données Prometheus/Loki, volumes NFS</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Switch Gigabit</strong> – Connexion réseau stable entre les Raspberry</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Box / Routeur</strong> – Internet local ; pas de ports exposés sur Internet</li>
+                       <li style="color: rgb(0, 0, 0);">Cartes microSD : SanDisk Extreme 64 Go (Pi 4), Samsung PRO/Endurance 128 Go (Pi 5 #1), SanDisk High Endurance (Pi 5 #2)</li>
+                       <li style="color: rgb(0, 0, 0);">4 × Câbles Ethernet RJ45 Cat 6A S/FTP – 2 m (Digitus)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Accès distant</strong> – VPN Tailscale (IP privées 100.x.x.x)</li>
                    </ul>
                </div>
                <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">II. Contexte d'Utilisation</h3>
-                   <p style="color: rgb(0, 0, 0);">Ce projet s'inscrit dans une démarche d'apprentissage approfondi de Kubernetes, de la pratique DevSecOps (CI, tests de vulnérabilité, sécurité du pipeline), et de la cybersécurité offensive/défensive. Il permet d'exécuter des audits avancés hors ligne ou via VPN sécurisé, et de créer une base de lab personnel extensible pour des projets futurs (Pentest, BlueTeam, RedTeam, etc.).</p>
-               </div>
-               <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">III. Architecture Technique</h3>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">II. Orchestration &amp; conteneurisation</h3>
                    <ul class="list-circle">
-                       <li style="color: rgb(0, 0, 0);">Cluster Kubernetes (k3s) sur 2 Raspberry Pi (Pi 4 & Pi 5)</li>
-                       <li style="color: rgb(0, 0, 0);">Stack Red Team : outils d'audit, pentest, anonymat</li>
-                       <li style="color: rgb(0, 0, 0);">Stack Blue Team : monitoring, alerting, SIEM, défense active</li>
-                       <li style="color: rgb(0, 0, 0);">Workflow GitOps (ArgoCD) pour la gestion continue</li>
-                       <li style="color: rgb(0, 0, 0);">Monitoring centralisé (Prometheus, Loki, Grafana)</li>
-                       <li style="color: rgb(0, 0, 0);">Alertes automatisées multi-canaux</li>
-                       <li style="color: rgb(0, 0, 0);">Accès VPN Tailscale pour administration distante</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">K3s</strong> – Orchestration (pods, services, volumes, ingress)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">containerd</strong> – Moteur de conteneur pour les pods</li>
                    </ul>
                </div>
                <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">IV. Fonctionnalités Clés</h3>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">III. Stockage &amp; volumes</h3>
                    <ul class="list-circle">
-                       <li style="color: rgb(0, 0, 0);">Déploiement automatisé de la stack sécurité (offensive/défensive)</li>
-                       <li style="color: rgb(0, 0, 0);">Audits de sécurité automatisés sur sites/applications/serveurs</li>
-                       <li style="color: rgb(0, 0, 0);">Alertes en temps réel (email, mobile, Discord) sur incidents</li>
-                       <li style="color: rgb(0, 0, 0);">Monitoring et logs centralisés (Prometheus, Loki, Grafana)</li>
-                       <li style="color: rgb(0, 0, 0);">Accès distant sécurisé et cloisonné (VPN Tailscale)</li>
-                       <li style="color: rgb(0, 0, 0);">Extensibilité pour de futurs labs (Pentest, SIEM, etc.)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">NFS (sur Pi 4)</strong> – Partage du disque 4 To avec les nœuds</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">NFS Provisioner</strong> – Création automatique de PV/PVC à partir du NFS</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">StorageClass</strong> – Provisionnement à la demande pour les apps</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">PersistentVolumes (PV) / PersistentVolumeClaims (PVC)</strong> – Stockage durable dans Kubernetes</li>
                    </ul>
                </div>
                <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">V. Technologies et Compétences Développées</h3>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">IV. Réseau et sécurité système</h3>
                    <ul class="list-circle">
-                       <li style="color: rgb(0, 0, 0);"><strong>Kubernetes (k3s)</strong>, <strong>Raspberry Pi</strong>, <strong>ArgoCD</strong></li>
-                       <li style="color: rgb(0, 0, 0);"><strong>Prometheus</strong>, <strong>Loki</strong>, <strong>Grafana</strong></li>
-                       <li style="color: rgb(0, 0, 0);"><strong>DevSecOps</strong>, <strong>GitOps</strong>, <strong>CI/CD</strong></li>
-                       <li style="color: rgb(0, 0, 0);"><strong>VPN Tailscale</strong>, <strong>Alerting multi-canaux</strong></li>
-                       <li style="color: rgb(0, 0, 0);">Automatisation, monitoring, sécurité offensive/défensive</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">OS</strong> – Ubuntu Server 22.04 LTS (64 bits) sur les Pi</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Tailscale</strong> – VPN chiffré : PC ↔ Pi 4 ↔ Pi 5 (100.x.x.x)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">UFW</strong> – Pare-feu : deny par défaut, règles explicites</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Fail2ban</strong> – Limitation des attaques SSH</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Auditd</strong> – Audit système bas niveau</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Lynis</strong> – Audit de durcissement des Raspberry Pi</li>
                    </ul>
                </div>
                <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VI. Défis et Solutions</h3>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">V. Monitoring &amp; alertes</h3>
                    <ul class="list-circle">
-                       <li style="color: rgb(0, 0, 0);">Gestion de la résilience et de la sécurité sur cluster bare-metal</li>
-                       <li style="color: rgb(0, 0, 0);">Automatisation du monitoring et des alertes multi-canaux</li>
-                       <li style="color: rgb(0, 0, 0);">Intégration GitOps et CI/CD sur environnement local</li>
-                       <li style="color: rgb(0, 0, 0);">Sécurisation des accès distants et cloisonnement réseau</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Collecte métriques :</strong> Prometheus (scraping), Node Exporter (CPU, RAM, disque, température, load par nœud), kube-state-metrics (état des objets Kubernetes)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Logs :</strong> Loki (stockage et requêtes), Promtail (collecte des logs pods/nœuds → Loki)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Visualisation :</strong> Grafana – Datasources Prometheus et Loki ; dashboards : KubeSecureBox Overview, Par nœud (Raspberry), Node Summary, Loki - Logs</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Alerting :</strong> Contact point Discord uniquement ; règles (groupe kubesecurebox-infra) : nœud down, Node NotReady, Pods Not Ready, RAM/CPU/disque faibles ou élevés, température &gt; 75 °C, load élevé</li>
                    </ul>
                </div>
                <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VII. Impact et Résultats</h3>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VI. Automatisation &amp; GitOps</h3>
                    <ul class="list-circle">
-                       <li style="color: rgb(0, 0, 0);">Environnement de lab personnel extensible et réutilisable</li>
-                       <li style="color: rgb(0, 0, 0);">Démonstration de compétences avancées en DevSecOps et cybersécurité</li>
-                       <li style="color: rgb(0, 0, 0);">Automatisation complète des audits et du monitoring</li>
-                       <li style="color: rgb(0, 0, 0);">Documentation claire et reproductible</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">GitHub</strong> – Repo Git des manifestes (YAML, Kustomize, Helm)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">ArgoCD</strong> – Synchronisation Git → Kubernetes (sync auto, self-heal, prune)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Sealed Secrets</strong> – Secrets chiffrés dans Git (déchiffrés par le controller dans le cluster)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">cert-manager</strong> – Certificats TLS (Let's Encrypt, DNS-01 Cloudflare)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Ingress NGINX</strong> – Entrée HTTP/HTTPS et terminaison TLS</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">CronJobs Kubernetes</strong> – Exécution planifiée des scans (selon les apps déployées)</li>
                    </ul>
                </div>
                <div class="col-12">
-                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VIII. Aspects Éducatifs et Professionnels</h3>
-                   <p style="color: rgb(0, 0, 0);">Ce projet illustre la capacité à concevoir un environnement complet de cybersécurité, à intégrer des outils open-source, à automatiser la gestion et la sécurité, et à documenter l'ensemble du processus pour la formation et la démonstration professionnelle.</p>
-                   <div style="background: rgb(242, 245, 248); border: 1px solid rgb(0, 0, 0); padding: 20px; border-radius: 6px; margin-top: 30px;">
-                       <p style="color: rgb(0, 0, 0); font-weight: 500; margin: 0; text-align: center;">KubeSecureBox représente l'aboutissement d'un lab DevSecOps complet, démontrant l'importance de l'automatisation, du monitoring et de la sécurité dans les environnements Kubernetes modernes.</p>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VII. Accès et interfaces</h3>
+                   <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">SSH :</strong> local <code>ssh nom_du_pi@192.168.1.X</code> ; distant (Tailscale) <code>ssh nom_du_pi@100.X.X.X</code></p>
+                   <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Interfaces web</strong> (HTTPS via Tailscale, cert-manager) :</p>
+                   <ul class="list-circle">
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Grafana</strong> – <a href="https://grafana.kubesecurebox.com" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); text-decoration: underline;">grafana.kubesecurebox.com</a> (dashboards et alerting)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">ArgoCD</strong> – <a href="https://argocd.kubesecurebox.com" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); text-decoration: underline;">argocd.kubesecurebox.com</a> (GitOps)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Pentesting</strong> – <a href="https://pentesting.kubesecurebox.com" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); text-decoration: underline;">pentesting.kubesecurebox.com</a> (outils de scan)</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">n8n</strong> – <a href="https://n8n.kubesecurebox.com" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); text-decoration: underline;">n8n.kubesecurebox.com</a> (automatisation)</li>
+                   </ul>
+               </div>
+               <div class="col-12">
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">VIII. App Pentesting</h3>
+                   <ul class="list-circle">
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Reconnaissance :</strong> Nmap, Enum4linux, Gobuster</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Exploitation :</strong> Hydra, John the Ripper, CrackMapExec</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Web :</strong> SQLMap, Nikto, WPScan</li>
+                       <li style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Wireless :</strong> Aircrack-ng</li>
+                   </ul>
+               </div>
+               <div class="col-12">
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">Bénéfices</h3>
+                   <div style="background: rgb(242, 245, 248); border: 1px solid rgb(0, 0, 0); padding: 20px; border-radius: 6px; margin-top: 15px;">
+                       <p style="color: rgb(0, 0, 0); font-weight: 500; margin: 0 0 10px 0;">Contrôle &amp; reproductibilité – Tout le cluster est décrit en Git (YAML, Kustomize, Helm). Un push suffit pour déployer ou rollback.</p>
+                       <p style="color: rgb(0, 0, 0); font-weight: 500; margin: 0 0 10px 0;">Visibilité &amp; réactivité – Dashboards et logs centralisés, alertes Discord dès qu'une anomalie est détectée.</p>
+                       <p style="color: rgb(0, 0, 0); font-weight: 500; margin: 0;">Lab sécurisé &amp; self-hosted – Accès uniquement via Tailscale sauf pour le site vitrine.</p>
                    </div>
-                   <div class="col-12">
-                       <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">Lien du Projet</h3>
-                       <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Documentation GitBook :</strong> <a href="https://alexiss-organization-12.gitbook.io/kubesecurebox/" target="_blank" style="color: rgb(0, 0, 0); text-decoration: underline;">alexiss-organization-12.gitbook.io/kubesecurebox/</a></p>
-                   </div>
+                   <h3 class="fw-medium" style="color: rgb(0, 0, 0); margin-top: 30px;">Liens du projet</h3>
+                   <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Site vitrine :</strong> <a href="https://kubesecurebox.com/" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); text-decoration: underline;">kubesecurebox.com</a></p>
+                   <p style="color: rgb(0, 0, 0);"><strong style="color: rgb(0, 0, 0);">Code source (GitHub) :</strong> <a href="https://github.com/alexismetton" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); text-decoration: underline;">github.com/alexiss-organization-12</a> (repos kubesecurebox_*)</p>
                </div>
            </div>
        `,
-           keywords: 'kubernetes, cybersécurité, red team, blue team, raspberry pi, devops, monitoring',
-           category: 'Cybersécurité',
-           services: 'Architecture Sécurisée, DevSecOps, Monitoring',
+           keywords: 'kubernetes, cybersécurité, red team, blue team, raspberry pi, devops, monitoring, ansible, n8n, gitops, loki, promtail, sealed secrets, cert-manager, ingress nginx',
+           category: 'DevSecOps',
+           services: 'GitOps, Monitoring, Ansible, Apps métier',
            client: 'Projet Personnel',
            duration: 'En cours',
            date: 'Mar 01, 2025',
@@ -572,7 +585,9 @@ const projects = [
                { name: 'Kubernetes' },
                { name: 'Red Team' },
                { name: 'Blue Team' },
-               { name: 'DevSecOps' }
+               { name: 'DevSecOps' },
+               { name: 'n8n' },
+               { name: 'Ansible' }
            ],
            images: [
                /*{ image: MainImage },
@@ -586,7 +601,7 @@ const projects = [
            seoDescription: 'Outil d\'audit automatisé de conformité ANSSI en Python. Scanner réseau, vérification de 40+ règles de sécurité françaises et génération de rapports PDF pour organisations gouvernementales.',
            description: 'Outil d\'audit automatisé de conformité ANSSI développé en Python. Scanner réseau, vérification de 40+ règles de sécurité françaises, génération de rapports PDF et dashboard de compliance pour organisations gouvernementales.',
            keywords: 'ANSSI, compliance, audit sécurité, python, conformité, gouvernemental',
-           category: 'Cybersécurité',
+           category: 'DevSecOps',
            services: 'Développement Python, Audit Sécurité, Compliance',
            client: 'Projet Personnel',
            duration: '1 mois',
@@ -705,7 +720,7 @@ const projects = [
                </div>
            `,
            keywords: 'docker, red team, pentest, tor, vpn, sécurité offensive',
-           category: 'Cybersécurité',
+           category: 'DevSecOps',
            services: 'Pentest, Conteneurisation, Sécurité Offensive',
            client: 'Formation Personnelle',
            duration: '1 semaine',
@@ -829,7 +844,7 @@ const projects = [
                </div>
            `,
            keywords: 'gcp, kubernetes, terraform, prometheus, cloud, devops, infrastructure',
-           category: 'Infrastructure',
+           category: 'DevSecOps',
            services: 'Infrastructure Cloud, DevOps, Monitoring',
            client: 'Projet Personnel',
            duration: '1 semaine',
@@ -950,7 +965,7 @@ const projects = [
                </div>
            `,
            keywords: 'usb security, clamav, wsl, automatisation, antivirus, script',
-           category: 'Cybersécurité',
+           category: 'DevSecOps',
            services: 'Sécurité Endpoint, Automatisation, Scripts',
            client: 'Usage Personnel',
            duration: '2 semaines',
@@ -1060,7 +1075,7 @@ const projects = [
                </div>
            `,
            keywords: 'pwnagotchi, wifi audit, raspberry pi, pentest wifi, handshake, ia',
-           category: 'Cybersécurité',
+           category: 'DevSecOps',
            services: 'Audit WiFi, Hardware Hacking, IA',
            client: 'Projet personnel',
            duration: '1 semaine',
@@ -1302,7 +1317,7 @@ const projects = [
                </div>
            `,
            keywords: 'raspberry pi, serveur web, nas, matomo, hébergement, ssl',
-           category: 'Infrastructure',
+           category: 'DevSecOps',
            services: 'Administration Système, Hébergement, Monitoring',
            client: 'Formation Bac+3',
            duration: '1 an et demi',
@@ -1352,19 +1367,14 @@ export const portfolioData = {
    },
    navigationList: [
        {
-           title: "Cybersécurité",
-           classes: "Cybersécurité",
-           dataFilter: ".Cybersécurité"
+           title: "DevSecOps",
+           classes: "DevSecOps",
+           dataFilter: ".DevSecOps"
        },
        {
            title: "Plugin",
            classes: "Plugin",
            dataFilter: ".Plugin"
-       },
-       {
-           title: "Infrastructure",
-           classes: "Infrastructure",
-           dataFilter: ".Infrastructure"
        },
        {
         title: "Web3",

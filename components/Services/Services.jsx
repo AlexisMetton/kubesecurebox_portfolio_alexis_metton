@@ -24,6 +24,11 @@ const Services = () => {
                             </div>
                             <div>
                                 <p>{item.description}</p>
+                                {item.linkUrl && (
+                                    <a href={item.linkUrl} target="_blank" rel="noopener noreferrer" className="text-decoration-underline">
+                                        {item.linkLabel || item.linkUrl}
+                                    </a>
+                                )}
                             </div>
                         </li>
                     ))}
