@@ -6,7 +6,7 @@ export const aboutData = {
         title2: "À propos de moi",
         heroAvatar: HeroAvatar,
         jobTitle: "Développeur Full Stack & Cybersécurité",
-        description: "Passionné de cybersécurité avec 3+ ans d'expérience en alternance. Formé en architecture sécurisée, DevSecOps et conformité ANSSI. Mon parcours polyvalent allie expertise technique et vision business pour assurer efficacement la protection des systèmes d'information.",
+        description: "Profil cybersécurité avec 3+ ans d’expérience en alternance. Formé en architecture sécurisée, DevSecOps et conformité ANSSI. Parcours polyvalent qui allie expertise technique et vision business pour protéger efficacement les systèmes d’information.",
         yearsOfExperience: "3",
         hoursOfWorking: "4",
         projectsDone: "40",
