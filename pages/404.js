@@ -43,11 +43,11 @@ export default function Custom404() {
                                     <h1 className="display-1 fw-bold mb-3">404</h1>
                                     <h2 className="h3 mb-4">Page non trouvée</h2>
                                     <p className="lead mb-4">
-                                        Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+                                        Désolé, la page que vous recherchez n&apos;existe pas ou a été déplacée.
                                     </p>
                                     <Link href="/" className="button button-dark">
                                         <i className="bi bi-house-door me-2"></i>
-                                        Retour à l'accueil
+                                        Retour à l&apos;accueil
                                     </Link>
                                 </div>
                             </section>
