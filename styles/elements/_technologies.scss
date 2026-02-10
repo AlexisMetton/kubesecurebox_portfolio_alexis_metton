@@ -37,13 +37,13 @@
     }
     
     // First row animation - scroll left
-    &:first-child {
-        animation: scrollLeft 70s linear infinite;
+    &:first-child:not(.manual-scrolling) {
+        animation: scrollLeft 25s linear infinite;
     }
     
     // Second row animation - scroll right
-    &:last-child {
-        animation: scrollRight 65s linear infinite;
+    &:last-child:not(.manual-scrolling) {
+        animation: scrollRight 20s linear infinite;
     }
 }
 
@@ -90,16 +90,18 @@
 }
 
 .technology-logo {
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
     object-fit: contain;
     width: 50px !important;
     height: 50px !important;
     min-width: 50px;
     min-height: 50px;
+    filter: grayscale(0%); /* Logos en couleur par défaut */
 }
 
 .technology-box:hover .technology-logo {
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(1.1);
+    transform: scale(1.05);
 }
 
 .technology-name {
@@ -112,11 +114,12 @@
 
 /* Mode sombre */
 .theme-dark .technology-logo {
-    filter: grayscale(100%) brightness(0.8);
+    filter: grayscale(0%) brightness(1); /* Logos en couleur même en mode sombre */
 }
 
 .theme-dark .technology-box:hover .technology-logo {
-    filter: grayscale(0%) brightness(1);
+    filter: grayscale(0%) brightness(1.15);
+    transform: scale(1.05);
 }
 
 .theme-dark .technology-box {

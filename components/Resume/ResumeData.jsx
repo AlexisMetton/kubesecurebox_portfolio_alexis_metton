@@ -2,7 +2,7 @@ export const resumeData = {
     mainData: {
         title: "Parcours",
         title2: "Formation & Expérience",
-        description: "Mon parcours de développeur full stack passionné de cybersécurité, combinant formation continue, expérience opérationnelle et certifications techniques pour maîtriser les technologies modernes."
+        description: "Mon parcours en développement, combinant formation continue, expérience opérationnelle et certifications techniques pour maîtriser les technologies modernes et sécurisées."
     },
     education: [
         {

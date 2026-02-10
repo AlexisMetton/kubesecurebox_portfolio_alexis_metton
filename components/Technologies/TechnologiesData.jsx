@@ -1,3 +1,5 @@
+import AnsibleLogo from '@/public/images/technologies/ansible.png';
+import ArgoCDLogo from '@/public/images/technologies/argocd.png';
 import ReactLogo from '@/public/images/technologies/react.svg';
 import SymfonyLogo from '@/public/images/technologies/symfony.svg';
 import PythonLogo from '@/public/images/technologies/python.svg';
@@ -41,6 +43,16 @@ export const technologiesData = {
        title2: "Stack Technique",
    },
    technologies: [
+        {
+            name: "Ansible",
+            logo: AnsibleLogo,
+            category: "DevOps"
+        },
+        {
+            name: "ArgoCD",
+            logo: ArgoCDLogo,
+            category: "DevOps"
+        },
         {
             name: "React.js",
             logo: ReactLogo,
@@ -184,11 +196,6 @@ export const technologiesData = {
         {
             name: "GitHub",
             logo: GitHubLogo,
-            category: "Tools"
-        },
-        {
-            name: "VSCode",
-            logo: VSCodeLogo,
             category: "Tools"
         },
         {

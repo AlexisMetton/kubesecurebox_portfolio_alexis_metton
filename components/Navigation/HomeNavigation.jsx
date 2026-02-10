@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const Navigation = () => {
     const [isFixed, setIsFixed] = useState(false);
@@ -18,7 +18,7 @@ const Navigation = () => {
     ];
 
     // Define a function to handle the scroll event
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         const scrollY = window.scrollY;
 
         // Determine which link is active based on the scroll position
@@ -30,7 +30,10 @@ const Navigation = () => {
         }
 
         // Calculate headerHeight and update isFixed
-        const headerHeight = document.getElementById('header').clientHeight;
+        const headerElement = document.getElementById('header');
+        if (!headerElement) return;
+        
+        const headerHeight = headerElement.clientHeight;
         const windowWidth = window.innerWidth;
 
         if (windowWidth < 992) {
@@ -40,22 +43,37 @@ const Navigation = () => {
                 setIsFixed(false);
             }
         }
-    };
+    }, []);
 
     // Add a scroll event listener when the component mounts
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
-        // Get the initial headerHeight
-        const initialHeaderHeight = document.getElementById('header').clientHeight;
-
-        // Check and update isFixed initially
-        const windowWidth = window.innerWidth;
-        if (windowWidth < 992) {
-            if (window.scrollY >= initialHeaderHeight) {
-                setIsFixed(true);
+        // Vérifier que nous sommes côté client et que l'élément existe
+        if (typeof window === 'undefined') return;
+        
+        // Attendre que le DOM soit complètement chargé
+        const initNavigation = () => {
+            const headerElement = document.getElementById('header');
+            if (!headerElement) {
+                // Réessayer après un court délai si l'élément n'existe pas encore
+                setTimeout(initNavigation, 100);
+                return;
             }
-        }
+
+            window.addEventListener('scroll', handleScroll);
+
+            // Get the initial headerHeight
+            const initialHeaderHeight = headerElement.clientHeight;
+
+            // Check and update isFixed initially
+            const windowWidth = window.innerWidth;
+            if (windowWidth < 992) {
+                if (window.scrollY >= initialHeaderHeight) {
+                    setIsFixed(true);
+                }
+            }
+        };
+
+        initNavigation();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);

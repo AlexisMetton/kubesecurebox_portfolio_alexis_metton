@@ -41,7 +41,7 @@ export const mainData = {
     publishDate: '2025-01-15',
     schemaType: 'Person',
     schemaName: 'Alexis Metton',
-    schemaJobTitle: 'Développeur Full Stack & Cybersécurité',
+    schemaJobTitle: 'DevSecOps & Cybersécurité',
     schemaDescription: 'Développeur Full Stack & Cybersécurité avec 3+ ans d\'expérience. Spécialisé en DevSecOps, conformité ANSSI, Kubernetes.',
     schemaUrl: 'https://alexismetton.com',
     schemaImage: 'https://alexismetton.com/images/profile.png',

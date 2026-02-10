@@ -27,7 +27,7 @@ const Technologies = () => {
         if (isFirstRowManual) return;
         
         if (firstRowRef.current) {
-            firstRowRef.current.scrollLeft += 1;
+            firstRowRef.current.scrollLeft += 3; // Augmenté pour aller plus vite
             if (firstRowRef.current.scrollLeft >= firstRowRef.current.scrollWidth / 4) {
                 firstRowRef.current.scrollLeft = 0;
             }
@@ -41,7 +41,7 @@ const Technologies = () => {
         if (isSecondRowManual) return;
         
         if (secondRowRef.current) {
-            secondRowRef.current.scrollLeft -= 1;
+            secondRowRef.current.scrollLeft -= 3; // Augmenté pour aller plus vite
             if (secondRowRef.current.scrollLeft <= 0) {
                 secondRowRef.current.scrollLeft = secondRowRef.current.scrollWidth / 4;
             }

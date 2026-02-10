@@ -133,19 +133,29 @@
 		
 		i {
 			font-size: 1.2em;
-			// Skill icon colors
-			&.fa-shield-halved { color: #E74C3C; } // OWASP - Red
+			// Skill icon colors - toutes les icônes en couleur
+			&.fa-shield-halved { color: #E74C3C; } // DevSecOps - Red
+			&.fa-arrows-rotate { color: #00B894; } // CI/CD - Green
+			&.fa-code { color: #6C5CE7; } // Infrastructure as Code - Purple
+			&.fa-git-alt { color: #F05032; } // GitOps - Orange
+			&.fa-box { color: #2496ED; } // Containerisation - Docker Blue
+			&.fa-network-wired { color: #326CE5; } // Orchestration - Kubernetes Blue
+			&.fa-chart-line { color: #00B894; } // Monitoring & Observability - Green
+			&.fa-bug { color: #FF6B6B; } // Tests d'intrusion - Red
+			&.fa-certificate { color: #FFD700; } // Conformité ANSSI - Gold
+			&.fa-shield { color: #E74C3C; } // Sécurité applicative - Red
+			&.fa-building-shield { color: #6C5CE7; } // Architecture sécurisée - Purple
+			&.fa-gear { color: #74B9FF; } // Automatisation - Blue
+			&.fa-cubes { color: #FD79A8; } // Microservices - Pink
+			&.fa-plug { color: #00B894; } // API REST - Green
+			&.fa-cloud { color: #74B9FF; } // Cloud Native - Blue
+			// Icônes legacy pour compatibilité
 			&.fa-dharmachakra { color: #326CE5; } // Kubernetes - Blue
 			&.fa-docker { color: #2496ED; } // Docker - Blue
 			&.fa-python { color: #3776AB; } // Python - Blue
 			&.fa-react { color: #61DAFB; } // React - Cyan
 			&.fa-symfony { color: #000000; } // Symfony - Black
 			&.fa-linux { color: #FCC624; } // Linux - Yellow
-			&.fa-bug { color: #FF6B6B; } // Tests d'intrusion - Red
-			&.fa-code { color: #6C5CE7; } // Infrastructure as Code - Purple
-			&.fa-chart-line { color: #00B894; } // Monitoring - Green
-			&.fa-git-alt { color: #F05032; } // Git - Orange
-			&.fa-certificate { color: #FFD700; } // Conformité ANSSI - Gold
 			&.fa-database { color: #4479A1; } // MySQL/MariaDB - Blue
 		}
 		

@@ -2,7 +2,7 @@ export const servicesData = {
     mainData: {
         title: "Services",
         title2: "Ce que je fais",
-        description: "Développeur full stack avec 3+ ans d'expérience en agence de communication et passionné de cybersécurité. Je combine développement web professionnel, projets personnels en sécurité informatique et optimisation par l'IA pour créer des solutions complètes et efficaces."
+        description: "3+ ans d'expérience en développement. Je combine clusters Kubernetes automatisés, GitOps et projets de sécurité pour créer des environnements sécurisés et reproductibles."
     },
     services: [
         {
@@ -23,19 +23,19 @@ export const servicesData = {
             number: '03',
             bootstrapIcon: 'bi bi-shield-check',
             title: 'Laboratoires de Cybersécurité',
-            description: 'Développement de projets personnels en cybersécurité comme KubeSecureBox : environnement complet Red/Blue Team sur cluster Kubernetes. Création d\'outils d\'analyse (scripts USB, scanner conformité ANSSI) et expérimentation avec des technologies de sécurité avancées.',
+            description: 'Création d\'environnements Red/Blue Team pour tests d\'intrusion et défense. Développement d\'outils d\'analyse (scanner USB, audit WiFi, conformité ANSSI) et expérimentation avec des technologies de sécurité avancées dans des environnements contrôlés.',
         },
         {
             number: '04',
-            bootstrapIcon: 'bi bi-robot',
-            title: 'Automatisation & IA Productivity',
-            description: 'Optimisation des processus métier et amélioration de la productivité grâce à l\'intelligence artificielle. Développement de scripts d\'automatisation et création d\'outils personnalisés pour améliorer l\'organisation des workflows.',
+            bootstrapIcon: 'bi bi-cloud-arrow-up',
+            title: 'Infrastructure Cloud & CI/CD',
+            description: 'Déploiement et gestion d\'applications containerisées avec Docker et Kubernetes sur Google Cloud Platform. Mise en place de pipelines CI/CD automatisés avec monitoring avancé et gestion d\'infrastructures cloud scalables.',
         },
         {
             number: '05',
-            bootstrapIcon: 'bi bi-cloud-arrow-up',
-            title: 'Infrastructure Cloud & DevOps',
-            description: 'Déploiement et gestion d\'applications containerisées avec Docker et Kubernetes sur Google Cloud Platform. Mise en place de pipelines CI/CD automatisés et d\'infrastructures as code avec monitoring avancé.',
+            bootstrapIcon: 'bi bi-robot',
+            title: 'Automatisation & Productivité',
+            description: 'Optimisation des processus métier grâce à l\'automatisation. Développement de scripts d\'automatisation, création d\'outils personnalisés et intégration d\'IA pour améliorer l\'efficacité et l\'organisation des workflows.',
         },
         {
             number: '06',

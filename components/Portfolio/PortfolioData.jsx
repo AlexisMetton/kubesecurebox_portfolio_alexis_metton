@@ -1363,7 +1363,7 @@ export const portfolioData = {
    mainData: {
        title: "Portfolio",
        title2: "Mes Projets Techniques",
-       description: "Découvrez mes projets personnels en cybersécurité, développement et infrastructure. De l'audit de conformité ANSSI aux laboratoires Red Team."
+       description: "Découvrez mes projets DevSecOps et cybersécurité. Du cluster Kubernetes sur Raspberry Pi aux environnements GitOps automatisés."
    },
    navigationList: [
        {
