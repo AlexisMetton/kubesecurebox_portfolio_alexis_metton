@@ -5,7 +5,7 @@ export const aboutData = {
         title: "À propos",
         title2: "À propos de moi",
         heroAvatar: HeroAvatar,
-        jobTitle: "DevSecOps & Cybersécurité",
+        jobTitle: "Développeur DevSecOps",
         description: "Profil cybersécurité avec 3+ ans d’expérience en alternance. Formé en architecture sécurisée, DevSecOps et conformité ANSSI. Parcours polyvalent qui allie expertise technique et vision business pour protéger efficacement les systèmes d’information.",
         yearsOfExperience: "3",
         hoursOfWorking: "4",
