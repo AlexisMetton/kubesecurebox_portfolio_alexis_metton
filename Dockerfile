@@ -22,8 +22,12 @@ RUN echo 'server {' > /etc/nginx/conf.d/default.conf && \
     echo '    server_name _;' >> /etc/nginx/conf.d/default.conf && \
     echo '    root /usr/share/nginx/html;' >> /etc/nginx/conf.d/default.conf && \
     echo '    index index.html;' >> /etc/nginx/conf.d/default.conf && \
+    echo '    access_log /dev/stdout;' >> /etc/nginx/conf.d/default.conf && \
+    echo '    error_log /dev/stderr;' >> /etc/nginx/conf.d/default.conf && \
     echo '    location / { try_files $uri $uri/ /index.html; }' >> /etc/nginx/conf.d/default.conf && \
     echo '}' >> /etc/nginx/conf.d/default.conf
+
+RUN chown -R nginx:nginx /var/cache/nginx /var/lib/nginx /usr/share/nginx/html
 
 # Run as non-root user
 USER nginx
