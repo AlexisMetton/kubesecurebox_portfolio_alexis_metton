@@ -27,7 +27,7 @@ RUN echo 'server {' > /etc/nginx/conf.d/default.conf && \
     echo '    location / { try_files $uri $uri/ /index.html; }' >> /etc/nginx/conf.d/default.conf && \
     echo '}' >> /etc/nginx/conf.d/default.conf
 
-RUN chown -R nginx:nginx /var/cache/nginx /var/lib/nginx /usr/share/nginx/html
+RUN mkdir -p /var/lib/nginx && chown -R nginx:nginx /var/cache/nginx /var/lib/nginx /usr/share/nginx/html
 
 # Run as non-root user
 USER nginx
