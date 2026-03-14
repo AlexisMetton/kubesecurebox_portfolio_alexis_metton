@@ -1,7 +1,8 @@
 # Portfolio Alexis Metton - Next.js export statique servi par nginx
 # ================================================================
 # Stage 1 : build Next.js (output: 'export' → out/)
-FROM node:20-alpine AS builder
+# Images épinglées pour reproductibilité et Trivy
+FROM node:20-alpine3.20 AS builder
 
 WORKDIR /app
 
@@ -12,7 +13,7 @@ COPY . .
 RUN npm run build:seo
 
 # Stage 2 : servir out/ avec nginx
-FROM nginx:alpine
+FROM nginx:1.27-alpine
 
 COPY --from=builder /app/out /usr/share/nginx/html
 
