@@ -30,12 +30,12 @@ export const resumeData = {
         {
             date: '2024 - PRÉSENT',
             degree: 'Développeur Full Stack',
-            university: 'Agence itiConseil - Alternance',
+            university: 'Agence itiConseil',
         },
         {
             date: '2022 - 2024',
             degree: 'Développeur Web',
-            university: 'Agence itiConseil - Alternance',
+            university: 'Agence itiConseil',
         },
         {
             date: '2022',
